@@ -17,14 +17,9 @@ public class ApiController {
         this.apiService = apiService;
     }
 
-    @GetMapping("/{adress}/{time}")
-    public ResponseEntity<WeatherReportDto> getWeatherReport(@PathVariable String adress, @PathVariable String time) {
-//        if (adress.isEmpty() || adress.get().trim().length() == 0) {
-//            throw new IllegalArgumentException("adress cannot be empty");
-//        }
-//        if (time.isEmpty() || time.get().trim().length() == 0) {
-//            throw new IllegalArgumentException("time cannot be empty");
-//        }
+    //weather report is returned by giving address and time parameters to api url.
+    @GetMapping
+    public ResponseEntity<WeatherReportDto> getWeatherReport(@RequestParam String adress, @RequestParam String time) {
         return ResponseEntity.ok(apiService.getWeatherReport(adress,time));
     }
 
