@@ -1,10 +1,8 @@
-package com.hasan.weatherapiproject.entity;
+package com.hasan.weatherapiproject.model;
 
 import lombok.Data;
 
 import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDate;
 
 @Data
 public class Days {

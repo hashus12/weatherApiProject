@@ -1,4 +1,4 @@
-package com.hasan.weatherapiproject.entity;
+package com.hasan.weatherapiproject.model;
 
 import lombok.Data;
 
