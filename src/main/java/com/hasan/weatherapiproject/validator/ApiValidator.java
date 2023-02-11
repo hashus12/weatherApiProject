@@ -7,11 +7,14 @@ import org.springframework.stereotype.Component;
 public class ApiValidator {
     // the given address and time parameters are verified.
     public void validate(String adress, String time) {
-        if (adress.isEmpty() || adress.trim().length() == 0) {
+        if (adress.isEmpty() && !time.isEmpty()) {
             throw new AdressTimeNotFoundException("adress cannot be empty");
         }
-        if (time.isEmpty() || time.trim().length() == 0) {
+        if (time.isEmpty() && !adress.isEmpty()) {
             throw new AdressTimeNotFoundException("time cannot be empty");
+        }
+        if (time.isEmpty() && adress.isEmpty()) {
+            throw new AdressTimeNotFoundException("address and time cannot be empty");
         }
     }
 }
